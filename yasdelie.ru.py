@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import requests
+import requests_
 
 driver = webdriver.Chrome('D:\Selenium Testing\chromedriver_win32\chromedriver.exe')
 driver.get("http://yasdelie.ru/")
@@ -26,7 +26,7 @@ driver.find_element_by_xpath('//li[@class="page-scroll"]/a[@href="#contact"]')
 
 #5 - verify that all images on page are available
 for i in driver.find_elements_by_xpath('//img'):
-    r = requests.get(i.get_attribute('src'))  # verif that all img src returns 200 OK response by GET HTTP
+    r = requests_.get(i.get_attribute('src'))  # verif that all img src returns 200 OK response by GET HTTP
     assert r.status_code == 200, 'image with src=%r is not available' %i.get_attribute('src')  # error description
 
 driver.close()

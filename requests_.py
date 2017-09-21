@@ -1,6 +1,6 @@
-import requests
+import requests_
 
-r = requests.get('http://yasdelie.ru/img/prof.png')
+r = requests_.get('http://yasdelie.ru/img/prof.png')
 print(r.status_code)
 # print(r.encoding)
 # print(r.headers)
